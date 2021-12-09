@@ -30,31 +30,31 @@ export function NewRoom() {
       authorId: user?.id,
     });
 
-    navigate(`/rooms/${firebaseRoom.key}`);
+    navigate(`/admin/rooms/${firebaseRoom.key}`);
   }
 
   return (
     <div id="page-auth">
       <aside>
         <img src={illustrationImg} alt="Illustration" />
-        <strong>Toda pergunta tem uma resposta</strong>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
+        <strong>Every question has an answer</strong>
+        <p>Learn and share knowledge with others</p>
       </aside>
       <main>
         <div className="main-content">
           <img src={logoImg} alt="letmeask" />
-          <h2>Crie uma nova sala</h2>
+          <h2>Create a new room</h2>
           <form onSubmit={handleCreateRoom}>
             <input
               type="text"
-              placeholder="Nome da sala"
+              placeholder="Room name"
               onChange={(event) => setNewRoom(event.target.value)}
               value={newRoom}
             />
-            <Button type="submit">Criar sala</Button>
+            <Button type="submit">Create room</Button>
           </form>
           <p>
-            Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
+            Want to join a existing room? <Link to="/">Click here</Link>
           </p>
         </div>
       </main>
